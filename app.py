@@ -28,7 +28,7 @@ def evolve():
 def untested():
     global population1
     if request.method == "GET":
-        num = request.args.get('numGenomes')
+        num = int(request.args.get('numGenomes'))
         untestedData = population1.getPopulation(num)
         return untestedData
     
@@ -41,7 +41,7 @@ def fit():
         print(genomes)          #gets json
         print(genomes['networks'])
         for network in genomes['networks']:
-            population1.updateFitness(network['id'], network['fitness'])
+            population1.updateFitness(int(network['id']), int(network['fitness']))
         return("success")
 
 @app.route('/get/status', methods=['GET'])
