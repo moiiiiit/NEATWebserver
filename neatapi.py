@@ -68,7 +68,7 @@ class SingleGenPopulation:
 		genomeLists = []
 		networksRemaining = untestedNetworks
 		for genome_id, genome in list(iteritems(self.p.population)):
-			if ((untestedNetworks > 0) and (genome.fitness != None)):
+			if ((networksRemaining > 0) and (genome.fitness == None)):
 				network = self.createSerializableGenome(genome)
 				genomeLists.append(network)
 				networksRemaining -= 1
