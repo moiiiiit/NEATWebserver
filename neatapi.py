@@ -13,6 +13,7 @@ class SingleGenPopulation:
 	def __init__(self, numInputs, numOutputs, popSize):
 		self.createNewPop(numInputs, numOutputs, popSize)
 		self.dirtyNetworks = []
+		self.generation = 0
 
 	def modifyConfig(self, nInput, nOutput, nPop):
 		self.nInput = nInput
@@ -39,15 +40,6 @@ class SingleGenPopulation:
 		# Create the population, which is the top-level object for a NEAT run.
 		self.p = neat.Population(config)
 
-	def loadExistingPop(self, genomes, nInput, nOutput):
-		createNewPop(nInput, nOutput, len(genomes))
-		self.p.population = {}
-		for genome in genomes:
-			self.p.append()
-		self.p.species = config.species_set_type(config.species_set_config, self.reporters)
-		self.p.generation = 0
-		self.p.species.speciate(config, self.population, self.generation)
-
 	def mutate(self):
 		self.p.population = self.p.reproduction.reproduce(self.p.config, self.p.species, self.p.config.pop_size, self.p.generation)
 		
@@ -66,6 +58,7 @@ class SingleGenPopulation:
 		# Divide the new population into species.
 		self.p.species.speciate(self.p.config, self.p.population, self.p.generation)
 		self.dirtyNetworks = []
+		self.generation += 1
 		for genome_id, genome in list(iteritems(self.p.population)):
 			genome.fitness = None
 
@@ -78,13 +71,8 @@ class SingleGenPopulation:
 				network = self.createSerializableGenome(genome)
 				genomeLists.append(network)
 				networksRemaining -= 1
-		return json.dumps(genomeLists, cls=ComplexEncoder)
-
-	def createGenome(self, nodeList, connectionList, key):
-		g = genome(key)
-		g.nodes = nodeList
-		g.connections = connectionList
-		return g
+		finalDict = {"genomeLists" : genomeLists, "generation" : self.generation}
+		return json.dumps(finalDict, cls=ComplexEncoder)
 
 	def createSerializableGenome(self, genome):
 		startNodes = StartNodes(self.nInput)
