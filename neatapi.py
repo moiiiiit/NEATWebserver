@@ -64,10 +64,15 @@ class SingleGenPopulation:
 		# Divide the new population into species.
 		self.p.species.speciate(self.p.config, self.p.population, self.p.generation)
 
-	def getPopulation(self):
+	def getPopulation(self, untestedNetworks):
+		genomeLists = []
+		networksRemaining = untestedNetworks
 		for genome_id, genome in list(iteritems(self.p.population)):
-			network = self.createSerializableGenome(genome)
-			print(json.dumps(network.reprJSON(), cls=ComplexEncoder))
+			if ((untestedNetworks > 0) and (genome.fitness != None)):
+				network = self.createSerializableGenome(genome)
+				genomeLists.append(network)
+				networksRemaining -= 1
+		return json.dumps(genomeLists, cls=ComplexEncoder)
 
 	def createGenome(self, nodeList, connectionList, key):
 		g = genome(key)
