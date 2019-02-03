@@ -12,6 +12,7 @@ import json
 class SingleGenPopulation:
 	def __init__(self, numInputs, numOutputs, popSize):
 		self.createNewPop(numInputs, numOutputs, popSize)
+		self.dirtyNetworks = []
 
 	def modifyConfig(self, nInput, nOutput, nPop):
 		self.nInput = nInput
@@ -49,6 +50,7 @@ class SingleGenPopulation:
 
 	def mutate(self):
 		self.p.population = self.p.reproduction.reproduce(self.p.config, self.p.species, self.p.config.pop_size, self.p.generation)
+		
 		# Check for complete extinction.
 		if not self.p.species.species:
 			self.p.reporters.complete_extinction()
@@ -63,12 +65,16 @@ class SingleGenPopulation:
 				raise CompleteExtinctionException()
 		# Divide the new population into species.
 		self.p.species.speciate(self.p.config, self.p.population, self.p.generation)
+		self.dirtyNetworks = []
+		for genome_id, genome in list(iteritems(self.p.population)):
+			genome.fitness = None
 
 	def getPopulation(self, untestedNetworks):
 		genomeLists = []
 		networksRemaining = untestedNetworks
 		for genome_id, genome in list(iteritems(self.p.population)):
-			if ((networksRemaining > 0) and (genome.fitness == None)):
+			if ((networksRemaining > 0) and (genome.fitness is None) and not (genome_id in self.dirtyNetworks)):
+				self.dirtyNetworks.append(genome_id)
 				network = self.createSerializableGenome(genome)
 				genomeLists.append(network)
 				networksRemaining -= 1
