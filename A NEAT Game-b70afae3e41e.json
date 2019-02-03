@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "a-neat-game-1549145749106",
+  "private_key_id": "b70afae3e41e2ce2927a7b80a5c85e897d39703e",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCkeFcFNBF+HDu0\nN/6PkybHnE3mXav8jNFcrUY3B0qaCM+dqcwjOZY2p44Lx4rjzFEDblP9S4qLdCk8\nw/fn54dNM8nk8a9Tc9TDa/iLj1mgsaWmXBbhDR2YPe5vpF1y3Ra/SX8K9WPXeidP\nx+7zanWalEC92dR+nwD7lNStRwdy+Ls+oXLyife3AjeIYUV/uIJZOQdK7ZVh0QAZ\nm/mkjsUDIA75fMXt459bZHyVlfv+5PjxKSLIb3C42W55rNwo1+20DLXABCjEJbhM\ngoeM/h3fbY9w1PCyLZDUpWA+M9Bfy8lZ4Erer8DRSWYTjybl4sfsj7trBrmZfdd6\njGxSrdpvAgMBAAECggEACBg6JDHrWHsYPybwWu2hn3pkZR2gHNZraXXHumab99fO\nLBLSzrsDVx5JAfBouAxywkn4TUOeBn4Jl4mHlnzRLm4JlkCE4gUV6CZUvb2o6h1E\nK1tl7t6f4cHOjeUXilMyTujVnVr1doH3FFihPI61Sg3Y398sM60stbUeAIc56SEb\nhS8Mu9wFBKN6jsPLaUSiTADy7eZgh5YnXelfbeH5oQUJEBqX0w1ObLBQ6m1z44jC\nsMXfcsa6vaEhDjS4rpdMVes+TCc0NwpN4bsf7DYHhWlJZblqxzQB/DF6xoR8/eyo\nZm3Wxtr+x9stenXQSgnRrrZXSh9U7V37zZywD0g2zQKBgQDfJjZnFH0JOFABitB1\nZDE3wt5DLSn95Lj/LBd4VosZP3+nUkVkEZaxlxNi9uG7Z3iWP28XxARlxRn6fO+S\n9PR5RKkgsFE/wemRm+5gMxwfRjw1J68iCUcBz/UHpzsX9Nucq4nICzUprgJFvhkS\nCpA7ypw6FL+twp/ZeKIoizUyxQKBgQC8rrHtmItLYc59ZuXrrsqXAeDIkqXp9FQ1\nJX4MnTsRja7sL5jZ7p/AK6yF7/J9tJ5orxAZfXCEje38ylGsJjL8pvrMyRnwkaaM\nrJweMnsJUVc55yS8UPp3CIp9fvEj2T9HOPlbXXAQOYsydVgFZE1e+FIwyCkKl+Vm\nSfEdzeDbowKBgQDOBp3b9hKrXI6hneRxPhwi+4vyQdSvUWlsTu0scdrjaLkXZuIi\nTgrv1ChWCtLHD/VJ4y9SpevZem1N0+PtrrO48yejwqaBUyuvAGTJ9OZWCaa0/Pq5\nVg91IOd+NWxd5fiNYeNICvD+lmYKtkS3X4FjcuFizp1adILZaoNtI3nucQKBgQCj\nwMHvQQrzW2lIcHtvNn3g3OJncM7J4yEKFwX0kKjpLRv5I732tiCzObQ7cen0q0Mn\n+3dvh+yVPlCjqjuDuotZttnHzWjT3rS7NjswAgPCLHQVbsP1JBqcIC+BhyBlSnCe\nsZXIc6mEi0yBeFHyLADyQXWjnLPx265ePiIjCcDzHQKBgQDCEAHWwqgdEvfBttDc\nPovpwup5jiPFPbkQsm4s7mHELxxoQF9zbKG9ZNJnYITCJXHOLYHYninzoEv8k6GP\nVqq5YkCK4p62f4Ls9Q0A/umRfv22VoVOR8Lu1SqONnnvdAqEMxfxnsXlp0d9jAop\nO5fBY0Llhvz9xjFVZ3enqITExA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "starting-account-ggvk93oy81vj@a-neat-game-1549145749106.iam.gserviceaccount.com",
+  "client_id": "117396198187984069758",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/starting-account-ggvk93oy81vj%40a-neat-game-1549145749106.iam.gserviceaccount.com"
+}
