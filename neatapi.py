@@ -71,6 +71,13 @@ class SingleGenPopulation:
 				network = self.createSerializableGenome(genome)
 				genomeLists.append(network)
 				networksRemaining -= 1
+		if (networksRemaining > 0):
+			for genome_id, genome in list(iteritems(self.p.population)):
+				if ((networksRemaining > 0) and (genome.fitness is None) and (genome_id in self.dirtyNetworks)):
+					self.dirtyNetworks.append(genome_id)
+					network = self.createSerializableGenome(genome)
+					genomeLists.append(network)
+					networksRemaining -= 1
 		finalDict = {"genomeLists" : genomeLists, "generation" : self.generation}
 		return json.dumps(finalDict, cls=ComplexEncoder)
 
